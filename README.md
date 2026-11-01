@@ -1,1 +1,125 @@
 # wendling-dynamic-gains
+
+MATLAB code and figure sources for a study in which the three synaptic gains of the Wendling neural mass
+model are promoted from constants to state variables, so that the interictal-to-ictal transition becomes a
+trajectory through a parameter plane rather than a change of parameters.
+
+The central claim the code is built to support: **a clinical period names a region of a parameter plane,
+not an interval of time**; a time course is a path crossing those regions, its label is where it sits, and
+its exit is decided by the gain law rather than by elapsed time or by its neighbours.
+
+Companion manuscript: *Dynamic Synaptic Gains in a Wendling Neural Mass Model Reproduce the
+Interictal-to-Ictal Transition and Its Electrographic Phenotypes* (Yan Shuyi, East China University of
+Science and Technology). Manuscript source lives outside this repository; everything needed to regenerate
+its eight figures is here.
+
+---
+
+## 1. Requirements
+
+- **MATLAB R2024b** (developed and tested with R2024b Update 5). No newer syntax is required; R2020a or
+  later should work.
+- **Signal Processing Toolbox** — used for `highpass`, `pwelch`, `hilbert`, `butter`, `filtfilt`,
+  `resample` and `findpeaks`. Nothing else is required.
+- **A LaTeX distribution** with TikZ, only for the two diagrams (Figs. 1–2).
+
+No data are downloaded and no external files are needed; every number in the paper is produced by the code
+in this repository.
+
+## 2. Layout
+
+```
+wendling-dynamic-gains/
+├── code/
+│   ├── setup_paths.m           adds the subfolders to the path, returns <code> and <root>/figures
+│   ├── run_all.m               runs the four MATLAB figure scripts in sequence
+│   ├── run_fig2.m              Fig. 4   single cycle, end to end
+│   ├── run_fig3_phase.m        Fig. 3   (Gs,Gf) parameter plane at three excitatory gains
+│   ├── run_fig5.m              Fig. 5   event-anchored statistics
+│   ├── run_fig7.m              Fig. 6   one-dimensional bifurcation diagrams
+│   ├── run_fig1.m, run_fig3.m  earlier generation, kept for the historical figures only
+│   ├── core/                   default_config.m, simulate_network.m — the single simulation entry point
+│   ├── model/                  wendling.m (four-population column), gain_bistable.m (alternative law)
+│   ├── network/                System.m — integration, per-edge delays, structural coupling W
+│   ├── noise/                  gauss.m — piecewise Gaussian external drive
+│   ├── features/               classify_* — the v2 four-period readout and its parameters
+│   ├── plotting/               one function per paper figure
+│   └── tests/                  scans, calibration, classifier verification, three-zone runs
+│       └── results/            every number in the paper, as .txt tables (+ small .mat caches)
+└── figures/                    the eight paper figures (PDF/PNG) and the two TikZ sources
+```
+
+Every `.m` file carries a header stating its inputs, outputs, runtime and — where relevant — the section of
+the paper it produces.
+
+## 3. Reproducing the figures
+
+All commands are run from `code/`; each script calls `setup_paths` itself, so the working directory does
+not matter.
+
+| Paper | File | Command | Cache used | Runtime |
+|---|---|---|---|---|
+| Fig. 1 | `fig_model_structure.pdf` | `figures/build_figures.bat` (pdflatex) | — | seconds |
+| Fig. 2 | `fig_classifier_tree.pdf` | `figures/build_figures.bat` (pdflatex) | — | seconds |
+| Fig. 3 | `fig_phase_BG.pdf` | `run_fig3_phase` | `scan_bg_A*.mat` ✔ included | ~1 min |
+| Fig. 4 | `fig_case_evolution.pdf` | `run_fig2` | none needed | 6 s of simulation |
+| Fig. 5 | `fig_event_stats.pdf` | `run_fig5` | `event_stats.mat` ✔ included | seconds from cache; ~15 min from scratch |
+| Fig. 6 | `fig_bifurcation.pdf` | `run_fig7` | `scan_bifurcation.mat` ✔ included | seconds from cache; ~4 min from scratch |
+| Fig. 7 | `fig_three_zone.pdf` | `run_three_zone` then `plot_three_zone('../figures/fig_three_zone.pdf')` | `three_zone.mat` ✘ **not** included | ~6–10 min |
+| Fig. 8 | `fig_feedback.pdf` | `scan_feedback`, `scan_feedback_strong`, `scan_feedback_slow`, then `plot_feedback('../figures/fig_feedback.pdf')` | `feedback*.mat` ✘ **not** included | ~8–15 min |
+
+`run_all` does Figs. 3–6 in one go, about 5 minutes when the caches are present.
+
+Timings are from the author's Windows workstation; MATLAB start-up alone costs ~45 s per invocation and is
+not included above. PDF bytes differ between runs because MATLAB stamps the creation date — compare the
+figures, not the checksums.
+
+## 4. Caches
+
+The `code/tests/results/` folder holds 32 plain-text result tables — these are the numbers quoted in the
+paper and are the first place to look when checking a claim — plus small `.mat` files that let the figure
+scripts run in seconds.
+
+Three caches are **deliberately excluded** because each is 60–66 MB of raw voltage traces: `three_zone.mat`,
+`feedback.mat` and `feedback_strong.mat`. They are regenerated by the scripts above, which are the slowest
+in the repository. Fig. 7 and Fig. 8 are therefore the only two figures that cannot be reproduced from a
+fresh clone in under a minute.
+
+## 5. Settings that matter
+
+- **Coupling constant** `C = 15`, fixed once against a two-node driver–response calibration
+  (`tests/calib_coupling_c.m`, `tests/calib_coupling_seed.m`; tables `calib_c_sweep.txt`,
+  `calib_c_seed.txt`). The calibrated quantity is a single full-weight edge (`W = 1`, `tau = 0`).
+- **Excitatory gain** `A = 3.25` mV everywhere in the three-zone runs. `A` is the switch that decides
+  whether a node has a slow rhythm of its own at all; starting a source at 4.60 mV would place it in the
+  ictal region from the first second. The plane figure uses `A = 3.25 / 4.00 / 4.60`.
+- **Noise** is Gaussian with `mu = 90`, `sigma = 30` pulses/s. By default it is drawn as a **single
+  segment** (`cfg.noise_segments = 1`), which makes the early trajectory independent of the simulated
+  duration. The published Figs. 3–5 were produced with the historical three-segment setting
+  `[0.3 0.5 0.2]`, which is pinned explicitly in `run_fig2.m`, `run_fig3.m`, `tests/event_stats.m` and
+  `tests/event_labels.m` so that those figures still reproduce.
+- **Trigger** for the single-cycle and statistics runs is an ESF step at `t = 10` s, at one of
+  `4.00 / 4.25 / 4.50` mV. The three-zone runs use no trigger at all: the source is started by displacing
+  its fixed point instead (a `0.005` mV offset added to the gain drive of that zone alone).
+- **Classifier** thresholds live in `features/classify_params_v2.m` and are documented against band
+  boundaries in the paper. `tests/test_classifier_boundaries.m` reproduces the verification reported in the
+  paper: archetypes, monotone threshold sweeps, spike-rate accuracy, sampling-rate invariance, noise
+  robustness and an independent autocorrelation descriptor.
+
+## 6. What to read first
+
+- `code/model/wendling.m` — the column, and the three-state hysteresis law that drives its gains.
+- `code/core/simulate_network.m` — the only simulation entry point; all four- and eight-panel figures come
+  from here.
+- `code/features/classify_timeseries_v2.m` — the readout. It abstains near every decision boundary instead
+  of forcing a label; the abstention class is reported in the paper as a result, not hidden.
+- `code/tests/results/*.txt` — the evidence tables.
+
+## 7. Citing
+
+See `CITATION.cff`. If you use this code, please cite the manuscript above; a DOI will be added here once
+the paper is accepted.
+
+## 8. License
+
+MIT — see `LICENSE`. Use it, modify it, no warranty.
