@@ -1,0 +1,14 @@
+# Normalise line endings: keep LF in the repository, check out native.
+* text=auto eol=lf
+
+# MATLAB sources and data tables are text
+*.m    text
+*.txt  text
+*.md   text
+*.cff  text
+
+# Binary artefacts
+*.pdf  binary
+*.png  binary
+*.mat  binary
+*.fig  binary
