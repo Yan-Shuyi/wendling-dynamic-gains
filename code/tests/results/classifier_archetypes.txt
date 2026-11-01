@@ -1,0 +1,18 @@
+原型对照（win=10 s, Fs=256，参考段=低幅背景）
+原型                             | 期望(v2)                 | v2 判定      | v1 判定     
+----------------------------------------------------------------------------------
+1 Hz 正弦 amp=6, dc=0            | uncertain-offband      | uncertain-offband | Type 1
+4 Hz 正弦 amp=8, dc=12           | ICTAL-theta            | ICTAL-theta | Type 4
+9 Hz 正弦 amp=5, dc=10           | ICTAL-alpha            | ICTAL-alpha | Type 4
+25 Hz 快活动 amp=2, dc=0          | ONSET-lvf              | ONSET-lvf  | Type 1
+35 Hz 快活动 amp=2, dc=8          | ONSET-lvf              | ONSET-lvf  | Type 5
+2 Hz 棘波串 amp=8, dc=0           | preONSET-repetitive    | preONSET-repetitive | Type 1
+0.3 Hz 棘波串 amp=8, dc=0         | preONSET-sporadic      | preONSET-sporadic | Type 1
+白噪声 sigma=0.8, dc=0            | intICTAL               | intICTAL   | Type 2
+常数 10 mV                       | intICTAL               | intICTAL   | Type 6
+
+采样率不变性（同一 2 Hz 棘波串，只改 Fs）
+  Fs=  128 | v2: intICTAL                spk=0.00Hz(真值2.0) refp99= 191.0 | v1: Type 2 (diff_max=2.60)
+  Fs=  256 | v2: preONSET    repetitive  spk=2.00Hz(真值2.0) refp99= 138.9 | v1: Type 1 (diff_max=1.32)
+  Fs=  512 | v2: preONSET    repetitive  spk=2.00Hz(真值2.0) refp99= 108.0 | v1: Type 1 (diff_max=0.67)
+  Fs= 1024 | v2: preONSET    repetitive  spk=2.00Hz(真值2.0) refp99=  70.0 | v1: Type 1 (diff_max=0.33)

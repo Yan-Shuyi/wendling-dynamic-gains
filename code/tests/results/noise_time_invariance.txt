@@ -1,0 +1,4 @@
+# 同一 seed、同一参数，只改 T；比较前 300 s 的逐点最大差
+# case              max|dEEG| (mV)   max|dGe| (mV)   identical
+single                  0.000e+00       0.000e+00   true
+three                   7.735e+00       1.018e-02   false

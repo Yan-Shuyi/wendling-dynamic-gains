@@ -1,0 +1,7 @@
+# no ESF, legacy + reset_tol=0.05, T=1200 s
+# case      n_burst  first   period  dur_med  Ge_max  Ge_min  Ge_end  Gs_end  Gf_end
+  SOZ_b2m        0     NaN      NaN      NaN     3.65     3.25     3.65    26.00    11.00
+  SOZ_b3m        0     NaN      NaN      NaN     3.86     3.25     3.85    28.01    11.50
+  SOZ_b5m        2   175.0    756.0    440.0     8.50     3.00     3.22    20.47     9.51
+  PZ_b3m       102   287.0      8.0      0.0     3.86     3.25     3.85    28.01    11.50
+  NIZ_b3m       14    67.0     20.0      0.0     8.50     3.00     3.85    27.98    11.50

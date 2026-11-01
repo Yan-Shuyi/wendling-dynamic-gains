@@ -1,0 +1,166 @@
+事件对齐 vs 固定时刻：每个触发幅度 60 例，onset = Gs < 12.75 mV 首次跨越
+
+========== 触发 Ge = 4.00 mV ==========
+onset 中位 56.0 s（49.2–94.4），检出 32/60
+--- Ge ---
+  aligned  phase              median      IQR       p5      p95
+  aligned  interictal           3.25     0.00     3.25     3.25
+  aligned  pre-onset(-10)       4.44     0.06     4.31     4.52
+  aligned  onset(0)             4.87     0.06     4.76     4.94
+  aligned  ictal(+20)           6.87     0.06     6.76     6.94
+  aligned  max IQR = 0.06，最小相邻相位中位数差 = 0.44，分离度 = 9.26
+  fixed    phase              median      IQR       p5      p95
+  fixed    9s                   3.25     0.00     3.25     3.25
+  fixed    30s                  4.24     0.12     4.09     4.35
+  fixed    50s                  4.22     0.40     4.02     4.76
+  fixed    70s                  4.89     2.31     3.90     6.75
+  fixed    max IQR = 2.31，最小相邻相位中位数差 = 0.01，分离度 = 0.02
+--- Gs ---
+  aligned  phase              median      IQR       p5      p95
+  aligned  interictal          22.00     0.00    22.00    22.00
+  aligned  pre-onset(-10)      24.50     0.21    24.24    24.77
+  aligned  onset(0)            12.75     0.01    12.74    12.75
+  aligned  ictal(+20)           6.03     0.01     6.02     6.04
+  aligned  max IQR = 0.21，最小相邻相位中位数差 = 2.50，分离度 = 45.77
+  fixed    phase              median      IQR       p5      p95
+  fixed    9s                  22.00     0.00    22.00    22.00
+  fixed    30s                 28.80     1.04    27.40    29.64
+  fixed    50s                 27.77     7.40    16.96    29.75
+  fixed    70s                  9.61    23.10     3.97    28.84
+  fixed    max IQR = 23.10，最小相邻相位中位数差 = 1.03，分离度 = 0.13
+--- Gf ---
+  aligned  phase              median      IQR       p5      p95
+  aligned  interictal          10.00     0.00    10.00    10.00
+  aligned  pre-onset(-10)      12.93     0.04    12.73    12.97
+  aligned  onset(0)            15.53     0.06    15.30    15.59
+  aligned  ictal(+20)           5.64     0.14     5.49     5.96
+  aligned  max IQR = 0.14，最小相邻相位中位数差 = 2.60，分离度 = 42.67
+  fixed    phase              median      IQR       p5      p95
+  fixed    9s                  10.00     0.00    10.00    10.00
+  fixed    30s                 11.70     0.26    11.35    11.92
+  fixed    50s                 12.11     1.66    11.48    14.59
+  fixed    70s                 11.42     2.74     6.52    14.46
+  fixed    max IQR = 2.74，最小相邻相位中位数差 = 0.41，分离度 = 0.35
+
+========== 触发 Ge = 4.25 mV ==========
+onset 中位 45.2 s（42.8–49.6），检出 60/60
+--- Ge ---
+  aligned  phase              median      IQR       p5      p95
+  aligned  interictal           3.25     0.00     3.25     3.25
+  aligned  pre-onset(-10)       4.64     0.07     4.57     4.71
+  aligned  onset(0)             5.06     0.06     4.99     5.13
+  aligned  ictal(+20)           7.06     0.06     6.99     7.13
+  aligned  max IQR = 0.07，最小相邻相位中位数差 = 0.42，分离度 = 8.98
+  fixed    phase              median      IQR       p5      p95
+  fixed    9s                   3.25     0.00     3.25     3.25
+  fixed    30s                  4.55     0.10     4.44     4.65
+  fixed    50s                  5.54     0.27     5.20     5.80
+  fixed    70s                  7.54     0.27     7.20     7.80
+  fixed    max IQR = 0.27，最小相邻相位中位数差 = 0.99，分离度 = 6.17
+--- Gs ---
+  aligned  phase              median      IQR       p5      p95
+  aligned  interictal          22.00     0.00    22.00    22.00
+  aligned  pre-onset(-10)      24.97     0.22    24.74    25.24
+  aligned  onset(0)            12.74     0.01    12.74    12.75
+  aligned  ictal(+20)           6.05     0.00     6.04     6.06
+  aligned  max IQR = 0.22，最小相邻相位中位数差 = 2.97，分离度 = 52.05
+  fixed    phase              median      IQR       p5      p95
+  fixed    9s                  22.00     0.00    22.00    22.00
+  fixed    30s                 28.34     1.01    27.32    29.39
+  fixed    50s                  3.45     0.44     3.06     4.88
+  fixed    70s                  6.80     0.34     6.38     7.10
+  fixed    max IQR = 1.01，最小相邻相位中位数差 = 3.35，分离度 = 7.51
+--- Gf ---
+  aligned  phase              median      IQR       p5      p95
+  aligned  interictal          10.00     0.00    10.00    10.00
+  aligned  pre-onset(-10)      12.94     0.04    12.89    12.97
+  aligned  onset(0)            15.64     0.02    15.61    15.67
+  aligned  ictal(+20)           5.25     0.12     5.11     5.39
+  aligned  max IQR = 0.12，最小相邻相位中位数差 = 2.70，分离度 = 61.07
+  fixed    phase              median      IQR       p5      p95
+  fixed    9s                  10.00     0.00    10.00    10.00
+  fixed    30s                 12.29     0.20    12.10    12.50
+  fixed    50s                 13.82     1.18    12.72    15.26
+  fixed    70s                  5.22     0.11     5.09     5.32
+  fixed    max IQR = 1.18，最小相邻相位中位数差 = 1.53，分离度 = 4.12
+
+========== 触发 Ge = 4.50 mV ==========
+onset 中位 40.4 s（39.0–42.6），检出 60/60
+--- Ge ---
+  aligned  phase              median      IQR       p5      p95
+  aligned  interictal           3.25     0.00     3.25     3.25
+  aligned  pre-onset(-10)       4.85     0.06     4.77     4.91
+  aligned  onset(0)             5.25     0.06     5.17     5.31
+  aligned  ictal(+20)           7.25     0.06     7.17     7.31
+  aligned  max IQR = 0.06，最小相邻相位中位数差 = 0.41，分离度 = 9.39
+  fixed    phase              median      IQR       p5      p95
+  fixed    9s                   3.25     0.00     3.25     3.25
+  fixed    30s                  4.84     0.09     4.73     4.92
+  fixed    50s                  6.21     0.17     5.95     6.39
+  fixed    70s                  8.21     0.17     7.95     8.39
+  fixed    max IQR = 0.17，最小相邻相位中位数差 = 1.37，分离度 = 12.98
+--- Gs ---
+  aligned  phase              median      IQR       p5      p95
+  aligned  interictal          22.00     0.00    22.00    22.00
+  aligned  pre-onset(-10)      25.47     0.17    25.22    25.67
+  aligned  onset(0)            12.74     0.01    12.74    12.75
+  aligned  ictal(+20)           6.07     0.00     6.06     6.07
+  aligned  max IQR = 0.17，最小相邻相位中位数差 = 3.47，分离度 = 74.73
+  fixed    phase              median      IQR       p5      p95
+  fixed    9s                  22.00     0.00    22.00    22.00
+  fixed    30s                 25.73     0.78    25.11    26.76
+  fixed    50s                  4.32     0.20     3.99     4.53
+  fixed    70s                  7.53     0.16     7.25     7.70
+  fixed    max IQR = 0.78，最小相邻相位中位数差 = 3.20，分离度 = 11.28
+--- Gf ---
+  aligned  phase              median      IQR       p5      p95
+  aligned  interictal          10.00     0.00    10.00    10.00
+  aligned  pre-onset(-10)      12.88     0.04    12.84    12.93
+  aligned  onset(0)            15.70     0.01    15.68    15.72
+  aligned  ictal(+20)           5.01     0.01     5.00     5.03
+  aligned  max IQR = 0.04，最小相邻相位中位数差 = 2.82，分离度 = 186.17
+  fixed    phase              median      IQR       p5      p95
+  fixed    9s                  10.00     0.00    10.00    10.00
+  fixed    30s                 12.82     0.16    12.62    12.96
+  fixed    50s                 11.03     0.67    10.29    12.13
+  fixed    70s                  5.47     0.06     5.37     5.53
+  fixed    max IQR = 0.67，最小相邻相位中位数差 = 1.80，分离度 = 8.08
+
+========== 跨触发幅度一致性 ==========
+同一标签的相位在 3 个触发幅度之间的中位数极差（mV）
+gain  phase               aligned      fixed
+Ge    interictal             0.00       0.00
+Ge    pre-onset(-10)         0.41       0.60
+Ge    onset(0)               0.38       1.99
+Ge    ictal(+20)             0.38       3.32
+Gs    interictal             0.00       0.00
+Gs    pre-onset(-10)         0.97       3.07
+Gs    onset(0)               0.00      24.31
+Gs    ictal(+20)             0.04       2.81
+Gf    interictal             0.00       0.00
+Gf    pre-onset(-10)         0.06       1.12
+Gf    onset(0)               0.17       2.80
+Gf    ictal(+20)             0.63       6.21
+
+（fixed 列按序号对照：interictal↔9s、pre-onset↔30s、onset↔50s、ictal↔70s；
+ 两者不是同一相位，这一列要读的是"它以为自己在取同一相位"——所以偏差就是错的相位）
+
+=== 汇总：每批 max IQR (mV) ===
+gain     aligned      fixed      ratio
+Ge          0.07       2.31       33.5x
+Gs          0.22      23.10      106.2x
+Gf          0.14       2.74       19.1x
+
+========== 分类器标签构成（触发 Ge=4.25，20 例，10 s 窗 / 2 s 步）==========
+相对相位 bin（相对 onset，s）：
+bin              intICTAL   preONSET      ONSET      ICTAL  uncertain
+[-40,-20)         100.0%       0.0%       0.0%       0.0%       0.0%   (n=199)
+[-20,-10)         100.0%       0.0%       0.0%       0.0%       0.0%   (n=100)
+[-10,  0)         100.0%       0.0%       0.0%       0.0%       0.0%   (n=100)
+[  0, 10)         100.0%       0.0%       0.0%       0.0%       0.0%   (n=100)
+[ 10, 20)         100.0%       0.0%       0.0%       0.0%       0.0%   (n=100)
+[ 20, 40)         100.0%       0.0%       0.0%       0.0%       0.0%   (n=200)
+
+粗时段构成：
+  扰动前（窗中心 < 10 s）  intICTAL 100%  preONSET 0%  ONSET 0%  ICTAL 0%  uncertain 0%  (n=60)
+  onset+5 s 之后          intICTAL 100%  preONSET 0%  ONSET 0%  ICTAL 0%  uncertain 0%  (n=1460)

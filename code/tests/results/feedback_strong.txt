@@ -1,0 +1,14 @@
+# C=15, T=900 s, 单段噪声, 只改 W(SOZ<-PZ)
+# w_ret  zone  n_ev  t_ev1   t_ev2   Ge_min_after  Gs_nadir  rms_max
+0.00   SOZ       1   175.8     NaN          3.637      3.00     4.25
+0.00   PZ        3   184.0   605.2          4.054      3.00     2.70
+0.00   NIZ       0     NaN     NaN            NaN       NaN     0.44
+0.60   SOZ       1   174.2     NaN          3.300      3.00     4.27
+0.60   PZ        5   182.2   605.0          4.222      3.00     2.43
+0.60   NIZ       0     NaN     NaN            NaN       NaN     0.44
+0.80   SOZ       2   171.2   606.0          3.770      3.00     4.42
+0.80   PZ        4   177.2   581.8          4.157      3.00     2.45
+0.80   NIZ       0     NaN     NaN            NaN       NaN     0.44
+1.00   SOZ       6   157.2   488.5          4.181      3.00     4.69
+1.00   PZ        3   162.2   579.0          3.977      3.00     2.87
+1.00   NIZ       0     NaN     NaN            NaN       NaN     0.44

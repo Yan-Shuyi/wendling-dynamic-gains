@@ -1,0 +1,14 @@
+# C=15, T=900 s, 单段噪声；PZ 两组 × w_ret 两档
+# pz        w_ret  zone  n_ev  t_ev1   t_ev2   Ge_min_after  rms_max
+PZ_fast   0.00   SOZ       1   175.8     NaN          3.637     4.25
+PZ_fast   0.00   PZ        3   184.0   605.2          4.054     2.70
+PZ_fast   0.00   NIZ       0     NaN     NaN            NaN     0.44
+PZ_fast   0.40   SOZ       1   172.2     NaN          4.231     4.30
+PZ_fast   0.40   PZ        4   182.0   648.2          4.118     2.83
+PZ_fast   0.40   NIZ       0     NaN     NaN            NaN     0.44
+PZ_slow   0.00   SOZ       1   175.8     NaN          3.637     4.25
+PZ_slow   0.00   PZ        3   183.8   605.2          4.054     2.63
+PZ_slow   0.00   NIZ       0     NaN     NaN            NaN     0.44
+PZ_slow   0.40   SOZ       1   172.2     NaN          4.230     4.31
+PZ_slow   0.40   PZ        3   183.2   648.2          4.267     2.63
+PZ_slow   0.40   NIZ       0     NaN     NaN            NaN     0.44

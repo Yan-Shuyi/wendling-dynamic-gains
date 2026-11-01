@@ -1,0 +1,6 @@
+# no ESF, single node, T=600 s; G values in mV
+# law      A    B   G   Ge_end Gs_end Gf_end  Ge_max  Gs_min  Gf_max  rms_base rms_max  n_bursts  first_burst  period
+legacy       22   10     3.25    22.00    10.00     3.25    22.00    0.981    1.065      0      NaN      NaN
+legacy       35   10     3.25    22.02    10.00     3.25    22.02    0.341    1.046      4    509.0     12.0
+bistable     22   10     3.25    22.04    10.04     3.25    22.00    0.970    1.054      0      NaN      NaN
+bistable     35   10     3.25    22.04    10.04     3.25    22.04    0.939    1.054      0      NaN      NaN
