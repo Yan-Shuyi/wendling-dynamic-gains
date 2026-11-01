@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the manuscript it accompanies."
+title: "wendling-dynamic-gains: dynamic synaptic gains in a Wendling neural mass model"
+abstract: >-
+  MATLAB code reproducing the figures of a study in which the excitatory, slow dendritic inhibitory and
+  fast somatic inhibitory gains of the four-population Wendling neural mass model are promoted from
+  constants to state variables driven by a three-state hysteresis law. The repository maps the four
+  clinical periods onto regions of a (Gs,Gf) parameter plane, verifies the readout against archetypes and
+  threshold sweeps, anchors trajectory statistics on the collapse of the slow inhibitory gain, and
+  reproduces the region boundaries as a bifurcation structure. A three-zone network built on the same
+  column shows that propagation acts on the onset and not on the termination of a discharge.
+type: software
+authors:
+  - family-names: Yan
+    given-names: Shuyi
+    affiliation: "School of Mathematics, East China University of Science and Technology, Shanghai 200237, China"
+repository-code: "https://github.com/Yan-Shuyi/wendling-dynamic-gains"
+license: MIT
+version: 1.0.0
+date-released: "2026-11-01"
+keywords:
+  - neural mass model
+  - Wendling model
+  - dynamic synaptic gain
+  - ictal transition
+  - EEG phenotype classification
+  - hysteresis
+  - epilepsy
